@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Utilities - Interactive Learning Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top p-3 bg-primary">
+        <div class="container-fluid container custom-nav">
+            <a class="navbar-brand fw-bold" href="#">Bootstrap Learning Guide</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-4">
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#howto">How To Use</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#spacing">Spacing</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#colors">Colors</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#typography">Typography</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#flexbox">Flexbox</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#grid">Grid</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#display">Display</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#borders">Borders</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#sizing">Sizing</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <!-- Introduction -->
+        <section class="mb-5">
+            <h1 class="display-4 mb-4">Bootstrap Utilities Guide</h1>
+            <p class="lead">Whatsap mga choy, I know naa nay Bootstrap site nga nag provide na ug utilities pero ang
+                purpose ani nga site is convinient learning platform ni to understand the built in utilities nga i
+                provide ni bootstrap saato without the need of making hundreds of lines sa CSS. Pero take note,
+                understanding the basics of CSS is still essential like ang flexbox and grid layouts since covered nana
+                tanan ni Bootstrap, we should know how and when to use those utilities.
+            </p>
+            <div class="alert alert-info">
+                <strong>💡 Tips:</strong> Lantawa ra ninyo ang code examples to see exactly which classes are used. And
+                another one is this website is using Bootstrap. So if you guys already know how to inspect this site,
+                makita ninyo ang mga classes nga gi gamit diri (aside sa animations like sa hover effects sa nav links
+                and webkit codes used in my custom CSS
+                nga gi AI nako hehe) mas makasabot pa ang mga ferson nganong ing ani ang output sa site using Bootstrap
+                CSS. Mao ra to oi, magtuon nata ninyo.
+            </div>
+        </section>
+
+        <!-- How To Use Bootstrap Utilities -->
+        <section id="howto" class="mb-5">
+            <h2 class="section-title">1. How to Use Bootstrap Utilities</h2>
+            <p>Bootstrap utilities are just <strong>CSS class names</strong> you write inside the <code>class=""</code>
+                attribute of any HTML element. No setup, no extra config — just link Bootstrap and start adding classes.
+            </p>
+
+            <div class="utility-card">
+
+                <h4>Step 1: Link Bootstrap CSS in your <code>&lt;head&gt;</code></h4>
+                <p class="text-muted small">You need to load Bootstrap's CSS before you can use any utility class. Paste
+                    this <code>&lt;link&gt;</code> inside your <code>&lt;head&gt;</code> tag.</p>
+                <div class="example-box">
+                    <pre class="code-snippet"><code><span class="hl-tag">&lt;head&gt;</span>
+  <span class="hl-comment">&lt;!-- Required meta tags --&gt;</span>
+  <span class="hl-tag">&lt;meta</span> <span class="hl-attr">charset=</span><span class="hl-val">"UTF-8"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;meta</span> <span class="hl-attr">name=</span><span class="hl-val">"viewport"</span> <span class="hl-attr">content=</span><span class="hl-val">"width=device-width, initial-scale=1.0"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;title&gt;</span>My Page<span class="hl-tag">&lt;/title&gt;</span>
+
+  <span class="hl-comment">&lt;!-- ✅ Bootstrap CSS CDN --&gt;</span>
+  <span class="hl-tag">&lt;link</span> <span class="hl-attr">href=</span><span class="hl-val">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"</span>
+        <span class="hl-attr">rel=</span><span class="hl-val">"stylesheet"</span><span class="hl-tag">&gt;</span>
+<span class="hl-tag">&lt;/head&gt;</span></code></pre>
+                </div>
+
+                <h4 class="mt-3">Step 2: Write utility classes inside <code>class=""</code></h4>
+                <p class="text-muted small">Add Bootstrap class names inside the <code>class</code> attribute of any
+                    HTML element — separated by spaces. Stack as many as you need.</p>
+                <div class="example-box">
+                    <pre
+                        class="code-snippet"><code><span class="hl-comment">&lt;!-- Single utility class --&gt;</span>
+<span class="hl-tag">&lt;div</span> <span class="hl-attr">class=</span><span class="hl-val">"mt-3"</span><span class="hl-tag">&gt;</span>I have a top margin of 1rem<span class="hl-tag">&lt;/div&gt;</span>
+
+<span class="hl-comment">&lt;!-- Multiple utilities stacked (separated by spaces) --&gt;</span>
+<span class="hl-tag">&lt;div</span> <span class="hl-attr">class=</span><span class="hl-val">"container mb-4 p-4 bg-primary text-white rounded"</span><span class="hl-tag">&gt;</span>
+  This box has: container width, bottom margin,
+  padding, blue background, white text, rounded corners.
+<span class="hl-tag">&lt;/div&gt;</span>
+
+<span class="hl-comment">&lt;!-- Works on ANY HTML element --&gt;</span>
+<span class="hl-tag">&lt;p</span>      <span class="hl-attr">class=</span><span class="hl-val">"text-center fw-bold text-danger"</span><span class="hl-tag">&gt;</span>A paragraph<span class="hl-tag">&lt;/p&gt;</span>
+<span class="hl-tag">&lt;span</span>   <span class="hl-attr">class=</span><span class="hl-val">"bg-warning text-dark px-2 rounded"</span><span class="hl-tag">&gt;</span>A span<span class="hl-tag">&lt;/span&gt;</span>
+<span class="hl-tag">&lt;button</span> <span class="hl-attr">class=</span><span class="hl-val">"btn btn-success mt-2 w-100"</span><span class="hl-tag">&gt;</span>A button<span class="hl-tag">&lt;/button&gt;</span>
+<span class="hl-tag">&lt;img</span>    <span class="hl-attr">class=</span><span class="hl-val">"rounded-circle border border-primary"</span> <span class="hl-attr">src=</span><span class="hl-val">"photo.jpg"</span><span class="hl-tag">&gt;</span></code></pre>
+                </div>
+
+                <h4 class="mt-3">Live Output:</h4>
+                <div class="example-box">
+                    <div class="container mb-3 p-4 bg-primary text-white rounded text-center">
+                        <code class="text-white">"container mb-4 p-4 bg-primary text-white rounded"</code>
+                    </div>
+                    <p class="text-center fw-bold text-danger mb-3">"text-center fw-bold text-danger" — on a &lt;p&gt;
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 align-items-center">
+                        <span class="bg-warning text-dark px-2 rounded">"bg-warning text-dark px-2 rounded"</span>
+                        <button class="btn btn-success">"btn btn-success"</button>
+                    </div>
+                </div>
+
+                <h4 class="mt-3">Step 3: Understand the class naming pattern</h4>
+                <p class="text-muted small">Bootstrap utility names follow a consistent formula:
+                    <code>{property}{side}-{size}</code> or <code>{property}-{value}</code>. Once you know this, you can
+                    guess most classes without looking them up.
+                </p>
+                <div class="example-box">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="demo-item">
+                                <code>bg-primary</code>
+                                <div class="mt-2 small text-muted">
+                                    <code>bg</code> = background<br>
+                                    <code>primary</code> = value
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="demo-item">
+                                <code>mt-3</code>
+                                <div class="mt-2 small text-muted">
+                                    <code>m</code> = margin<br>
+                                    <code>t</code> = top (side)<br>
+                                    <code>3</code> = 1rem (size)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="demo-item">
+                                <code>text-center</code>
+                                <div class="mt-2 small text-muted">
+                                    <code>text</code> = text-align<br>
+                                    <code>center</code> = value
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="demo-item">
+                                <code>d-flex</code>
+                                <div class="mt-2 small text-muted">
+                                    <code>d</code> = display<br>
+                                    <code>flex</code> = value
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="demo-item">
+                                <code>col-md-6</code>
+                                <div class="mt-2 small text-muted">
+                                    <code>col</code> = column<br>
+                                    <code>md</code> = breakpoint (≥768px)<br>
+                                    <code>6</code> = 6 of 12 columns
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="demo-item">
+                                <code>px-4</code>
+                                <div class="mt-2 small text-muted">
+                                    <code>p</code> = padding<br>
+                                    <code>x</code> = left + right<br>
+                                    <code>4</code> = 1.5rem (size)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-3">Step 4: Add Bootstrap JS <span class="badge bg-secondary fw-normal"
+                        style="font-size: 0.7rem; vertical-align: middle;">optional</span></h4>
+                <p class="text-muted small">Utility classes only need CSS. But for interactive components like
+                    dropdowns, modals, and collapsible navbars, add this before your closing <code>&lt;/body&gt;</code>.
+                </p>
+                <div class="example-box">
+                    <pre class="code-snippet"><code>  <span class="hl-comment">&lt;!-- ✅ Bootstrap JS Bundle (includes Popper.js) --&gt;</span>
+  <span class="hl-tag">&lt;script</span> <span class="hl-attr">src=</span><span class="hl-val">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"</span><span class="hl-tag">&gt;&lt;/script&gt;</span>
+<span class="hl-tag">&lt;/body&gt;</span></code></pre>
+                </div>
+
+                <h4 class="mt-3"> Full Starter Boilerplate</h4>
+                <p class="text-muted small">Copy this and you're ready to start writing Bootstrap utilities immediately.
+                </p>
+                <div class="example-box">
+                    <pre class="code-snippet"><code><span class="hl-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="hl-tag">&lt;html</span> <span class="hl-attr">lang=</span><span class="hl-val">"en"</span> <span class="hl-attr">data-bs-theme=</span><span class="hl-val">"dark"</span><span class="hl-tag">&gt;</span>
+<span class="hl-tag">&lt;head&gt;</span>
+  <span class="hl-tag">&lt;meta</span> <span class="hl-attr">charset=</span><span class="hl-val">"UTF-8"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;meta</span> <span class="hl-attr">name=</span><span class="hl-val">"viewport"</span> <span class="hl-attr">content=</span><span class="hl-val">"width=device-width, initial-scale=1.0"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;title&gt;</span>My Bootstrap Site<span class="hl-tag">&lt;/title&gt;</span>
+
+  <span class="hl-comment">&lt;!-- Bootstrap CSS --&gt;</span>
+  <span class="hl-tag">&lt;link</span> <span class="hl-attr">href=</span><span class="hl-val">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"</span>
+        <span class="hl-attr">rel=</span><span class="hl-val">"stylesheet"</span><span class="hl-tag">&gt;</span>
+
+  <span class="hl-comment">&lt;!-- Your custom CSS (Optional) --&gt;</span>
+  <span class="hl-tag">&lt;link</span> <span class="hl-attr">rel=</span><span class="hl-val">"stylesheet"</span> <span class="hl-attr">href=</span><span class="hl-val">"style.css"</span><span class="hl-tag">&gt;</span>
+<span class="hl-tag">&lt;/head&gt;</span>
+<span class="hl-tag">&lt;body&gt;</span>
+
+  <span class="hl-comment">&lt;!-- Start using Bootstrap utilities here! --&gt;</span>
+  <span class="hl-tag">&lt;div</span> <span class="hl-attr">class=</span><span class="hl-val">"container mt-5"</span><span class="hl-tag">&gt;</span>
+    <span class="hl-tag">&lt;h1</span> <span class="hl-attr">class=</span><span class="hl-val">"text-center fw-bold text-primary"</span><span class="hl-tag">&gt;</span>Hello, Bootstrap!<span class="hl-tag">&lt;/h1&gt;</span>
+    <span class="hl-tag">&lt;p</span> <span class="hl-attr">class=</span><span class="hl-val">"lead text-center text-muted mt-3"</span><span class="hl-tag">&gt;</span>Start building here.<span class="hl-tag">&lt;/p&gt;</span>
+  <span class="hl-tag">&lt;/div&gt;</span>
+
+  <span class="hl-comment">&lt;!-- Bootstrap JS Bundle --&gt;</span>
+  <span class="hl-tag">&lt;script</span> <span class="hl-attr">src=</span><span class="hl-val">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"</span><span class="hl-tag">&gt;&lt;/script&gt;</span>
+<span class="hl-tag">&lt;/body&gt;</span>
+<span class="hl-tag">&lt;/html&gt;</span></code></pre>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Spacing Utilities -->
+        <section id="spacing" class="mb-5">
+            <h2 class="section-title">2. Spacing Utilities (Margin & Padding)</h2>
+            <p>Format: <code>{property}{sides}-{size}</code></p>
+
+            <div class="utility-card">
+                <h4>Properties:</h4>
+                <ul>
+                    <li><code>m</code> - margin</li>
+                    <li><code>p</code> - padding</li>
+                </ul>
+
+                <h4 class="mt-3">Sides:</h4>
+                <ul>
+                    <li><code>t</code> - top</li>
+                    <li><code>b</code> - bottom</li>
+                    <li><code>s</code> - start (left in LTR)</li>
+                    <li><code>e</code> - end (right in LTR)</li>
+                    <li><code>x</code> - both left and right</li>
+                    <li><code>y</code> - both top and bottom</li>
+                    <li>blank - all sides</li>
+                </ul>
+
+                <h4 class="mt-3">Sizes:</h4>
+                <ul>
+                    <li><code>0</code> - 0</li>
+                    <li><code>1</code> - 0.25rem (4px)</li>
+                    <li><code>2</code> - 0.5rem (8px)</li>
+                    <li><code>3</code> - 1rem (16px)</li>
+                    <li><code>4</code> - 1.5rem (24px)</li>
+                    <li><code>5</code> - 3rem (48px)</li>
+                    <li><code>auto</code> - auto</li>
+                </ul>
+
+                <h4 class="mt-4">Examples:</h4>
+                <div class="example-box">
+                    <div class="demo-item mb-3">
+                        <code>mt-3</code> - Margin top 1rem
+                    </div>
+                    <div class="demo-item p-4 bg-primary">
+                        <code>p-4</code> - Padding all sides 1.5rem
+                    </div>
+                    <div class="demo-item mx-auto" style="width: 200px;">
+                        <code>mx-auto</code> - Margin left and right auto (centers element)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Utilities -->
+        <section id="colors" class="mb-5">
+            <h2 class="section-title">3. Color Utilities</h2>
+
+            <div class="utility-card">
+                <h4>Text Colors:</h4>
+                <div class="example-box">
+                    <p class="text-primary">text-primary</p>
+                    <p class="text-secondary">text-secondary</p>
+                    <p class="text-success">text-success</p>
+                    <p class="text-danger">text-danger</p>
+                    <p class="text-warning">text-warning</p>
+                    <p class="text-info">text-info</p>
+                    <p class="text-light p-2 ">text-light</p>
+                    <p class="text-dark bg-light p-2 d-inline-block">text-dark</p>
+                    <p class="text-muted">text-muted</p>
+                    <p class="text-white p-2">text-white</p>
+                </div>
+
+                <h4 class="mt-4">Background Colors:</h4>
+                <div class="example-box">
+                    <div class="bg-primary text-white p-3 mb-2">bg-primary</div>
+                    <div class="bg-secondary text-white p-3 mb-2">bg-secondary</div>
+                    <div class="bg-success text-white p-3 mb-2">bg-success</div>
+                    <div class="bg-danger text-white p-3 mb-2">bg-danger</div>
+                    <div class="bg-warning text-dark p-3 mb-2">bg-warning</div>
+                    <div class="bg-info text-dark p-3 mb-2">bg-info</div>
+                    <div class="bg-light text-dark p-3 mb-2">bg-light</div>
+                    <div class="bg-dark text-white p-3 mb-2">bg-dark</div>
+                </div>
+
+                <h4 class="mt-4">Opacity:</h4>
+                <div class="example-box">
+                    <div class="bg-primary text-white p-3 mb-2 bg-opacity-75">bg-opacity-75</div>
+                    <div class="bg-primary text-white p-3 mb-2 bg-opacity-50">bg-opacity-50</div>
+                    <div class="bg-primary text-white p-3 mb-2 bg-opacity-25">bg-opacity-25</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section id="typography" class="mb-5">
+            <h2 class="section-title">4. Typography Utilities</h2>
+
+            <div class="utility-card">
+                <h4>Font Size:</h4>
+                <div class="example-box">
+                    <p class="fs-1">fs-1 - Largest</p>
+                    <p class="fs-2">fs-2</p>
+                    <p class="fs-3">fs-3</p>
+                    <p class="fs-4">fs-4</p>
+                    <p class="fs-5">fs-5</p>
+                    <p class="fs-6">fs-6 - Smallest</p>
+                </div>
+
+                <h4 class="mt-4">Font Weight:</h4>
+                <div class="example-box">
+                    <p class="fw-bold">fw-bold - Bold text</p>
+                    <p class="fw-bolder">fw-bolder - Bolder weight</p>
+                    <p class="fw-semibold">fw-semibold - Semibold weight</p>
+                    <p class="fw-normal">fw-normal - Normal weight</p>
+                    <p class="fw-light">fw-light - Light weight</p>
+                    <p class="fw-lighter">fw-lighter - Lighter weight</p>
+                </div>
+
+                <h4 class="mt-4">Text Alignment:</h4>
+                <div class="example-box">
+                    <p class="text-start">text-start - Align left</p>
+                    <p class="text-center">text-center - Align center</p>
+                    <p class="text-end">text-end - Align right</p>
+                </div>
+
+                <h4 class="mt-4">Text Transform:</h4>
+                <div class="example-box">
+                    <p class="text-lowercase">TEXT-LOWERCASE - lowercase text</p>
+                    <p class="text-uppercase">text-uppercase - UPPERCASE TEXT</p>
+                    <p class="text-capitalize">text-capitalize - capitalize each word</p>
+                </div>
+
+                <h4 class="mt-4">Text Decoration:</h4>
+                <div class="example-box">
+                    <p class="text-decoration-none"><a href="#">text-decoration-none - Remove underline</a></p>
+                    <p class="text-decoration-underline">text-decoration-underline - Underlined text</p>
+                    <p class="text-decoration-line-through">text-decoration-line-through - Strikethrough</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flexbox -->
+        <section id="flexbox" class="mb-5">
+            <h2 class="section-title">5. Flexbox Utilities</h2>
+
+            <div class="utility-card">
+                <h4>Display Flex:</h4>
+                <div class="example-box">
+                    <div class="d-flex p-3 bg-secondary mb-3">
+                        <div class="demo-flex-item">Item 1</div>
+                        <div class="demo-flex-item">Item 2</div>
+                        <div class="demo-flex-item">Item 3</div>
+                    </div>
+                    <code>d-flex</code> - Creates a flex container
+                </div>
+
+                <h4 class="mt-4">Justify Content (horizontal alignment):</h4>
+                <div class="example-box">
+                    <div class="d-flex justify-content-start p-3 bg-secondary mb-2">
+                        <div class="demo-flex-item">justify-content-start</div>
+                    </div>
+                    <div class="d-flex justify-content-center p-3 bg-secondary mb-2">
+                        <div class="demo-flex-item">justify-content-center</div>
+                    </div>
+                    <div class="d-flex justify-content-end p-3 bg-secondary mb-2">
+                        <div class="demo-flex-item">justify-content-end</div>
+                    </div>
+                    <div class="d-flex justify-content-between p-3 bg-secondary mb-2">
+                        <div class="demo-flex-item">Between 1</div>
+                        <div class="demo-flex-item">Between 2</div>
+                        <div class="demo-flex-item">Between 3</div>
+                    </div>
+                    <div class="d-flex justify-content-around p-3 bg-secondary mb-2">
+                        <div class="demo-flex-item">Around 1</div>
+                        <div class="demo-flex-item">Around 2</div>
+                        <div class="demo-flex-item">Around 3</div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">Align Items (vertical alignment):</h4>
+                <div class="example-box">
+                    <div class="d-flex align-items-start p-3 bg-secondary mb-2" style="height: 100px;">
+                        <div class="demo-flex-item">align-items-start</div>
+                    </div>
+                    <div class="d-flex align-items-center p-3 bg-secondary mb-2" style="height: 100px;">
+                        <div class="demo-flex-item">align-items-center</div>
+                    </div>
+                    <div class="d-flex align-items-end p-3 bg-secondary mb-2" style="height: 100px;">
+                        <div class="demo-flex-item">align-items-end</div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">Flex Direction:</h4>
+                <div class="example-box">
+                    <div class="d-flex flex-row p-3 bg-secondary mb-2">
+                        <div class="demo-flex-item">1</div>
+                        <div class="demo-flex-item">2</div>
+                        <div class="demo-flex-item">3</div>
+                    </div>
+                    <code>flex-row</code> - Horizontal direction
+
+                    <div class="d-flex flex-column p-3 bg-secondary mb-2 mt-3">
+                        <div class="demo-flex-item mb-1">1</div>
+                        <div class="demo-flex-item mb-1">2</div>
+                        <div class="demo-flex-item">3</div>
+                    </div>
+                    <code>flex-column</code> - Vertical direction
+                </div>
+
+                <h4 class="mt-4">Gap:</h4>
+                <div class="example-box">
+                    <div class="d-flex gap-3 p-3 bg-secondary">
+                        <div class="demo-flex-item">gap-3</div>
+                        <div class="demo-flex-item">Item 2</div>
+                        <div class="demo-flex-item">Item 3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid System -->
+        <section id="grid" class="mb-5">
+            <h2 class="section-title">6. Grid System</h2>
+
+            <div class="utility-card">
+                <p>Bootstrap uses a 12-column grid system. Columns add up to 12.</p>
+
+                <h4>Basic Grid:</h4>
+                <div class="example-box">
+                    <div class="container">
+                        <div class="row mb-2">
+                            <div class="col demo-grid-item">col (auto-width)</div>
+                            <div class="col demo-grid-item">col</div>
+                            <div class="col demo-grid-item">col</div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-6 demo-grid-item">col-6 (50%)</div>
+                            <div class="col-6 demo-grid-item">col-6 (50%)</div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-4 demo-grid-item">col-4 (33.33%)</div>
+                            <div class="col-4 demo-grid-item">col-4 (33.33%)</div>
+                            <div class="col-4 demo-grid-item">col-4 (33.33%)</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-8 demo-grid-item">col-8 (66.66%)</div>
+                            <div class="col-4 demo-grid-item">col-4 (33.33%)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">Responsive Grid:</h4>
+                <p>Breakpoints: <code>sm</code> (≥576px), <code>md</code> (≥768px), <code>lg</code> (≥992px),
+                    <code>xl</code> (≥1200px)
+                </p>
+                <div class="example-box">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4 demo-grid-item mb-2">
+                                col-12 col-md-6 col-lg-4
+                                <br><small>Full width on mobile, half on tablet, third on desktop</small>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 demo-grid-item mb-2">
+                                col-12 col-md-6 col-lg-4
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 demo-grid-item mb-2">
+                                col-12 col-md-6 col-lg-4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Display Utilities -->
+        <section id="display" class="mb-5">
+            <h2 class="section-title">7. Display Utilities</h2>
+
+            <div class="utility-card">
+                <h4>Display Values:</h4>
+                <div class="example-box">
+                    <div class="d-block bg-primary text-white p-2 mb-2">d-block - Block element</div>
+                    <span class="d-inline-block bg-success text-white p-2 me-2">d-inline-block</span>
+                    <span class="d-inline-block bg-success text-white p-2">d-inline-block</span>
+                    <div class="d-none bg-danger p-2 mb-2">d-none - Hidden element</div>
+                    <div class="bg-info text-white p-2">This is visible</div>
+                </div>
+
+                <h4 class="mt-4">Responsive Display:</h4>
+                <div class="example-box">
+                    <div class="d-none d-md-block bg-warning text-dark p-2">
+                        d-none d-md-block - Hidden on mobile, visible on tablet+
+                    </div>
+                    <div class="d-block d-md-none bg-info text-white p-2">
+                        d-block d-md-none - Visible on mobile, hidden on tablet+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Border Utilities -->
+        <section id="borders" class="mb-5">
+            <h2 class="section-title">8. Border Utilities</h2>
+
+            <div class="utility-card">
+                <h4>Border Sides:</h4>
+                <div class="example-box d-flex gap-3 flex-wrap">
+                    <div class="border p-3">border</div>
+                    <div class="border-top p-3">border-top</div>
+                    <div class="border-end p-3">border-end</div>
+                    <div class="border-bottom p-3">border-bottom</div>
+                    <div class="border-start p-3">border-start</div>
+                </div>
+
+                <h4 class="mt-4">Border Colors:</h4>
+                <div class="example-box d-flex gap-3 flex-wrap">
+                    <div class="border border-primary p-3">border-primary</div>
+                    <div class="border border-success p-3">border-success</div>
+                    <div class="border border-danger p-3">border-danger</div>
+                    <div class="border border-warning p-3">border-warning</div>
+                </div>
+
+                <h4 class="mt-4">Border Radius:</h4>
+                <div class="example-box d-flex gap-3 flex-wrap">
+                    <div class="border p-3 rounded">rounded</div>
+                    <div class="border p-3 rounded-1">rounded-1</div>
+                    <div class="border p-3 rounded-2">rounded-2</div>
+                    <div class="border p-3 rounded-3">rounded-3</div>
+                    <div class="border p-3 rounded-circle" style="width: 80px; height: 80px;">circle</div>
+                    <div class="border p-3 rounded-pill">rounded-pill</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sizing Utilities -->
+        <section id="sizing" class="mb-5">
+            <h2 class="section-title">9. Sizing Utilities</h2>
+
+            <div class="utility-card">
+                <h4>Width:</h4>
+                <div class="example-box">
+                    <div class="w-25 bg-primary text-white p-2 mb-2">w-25 (25% width)</div>
+                    <div class="w-50 bg-primary text-white p-2 mb-2">w-50 (50% width)</div>
+                    <div class="w-75 bg-primary text-white p-2 mb-2">w-75 (75% width)</div>
+                    <div class="w-100 bg-primary text-white p-2 mb-2">w-100 (100% width)</div>
+                    <div class="w-auto bg-primary text-white p-2 d-inline-block">w-auto (auto width)</div>
+                </div>
+
+                <h4 class="mt-4">Height:</h4>
+                <div class="example-box d-flex gap-2" style="height: 200px;">
+                    <div class="h-25 bg-success text-white p-2" style="width: 80px;">h-25</div>
+                    <div class="h-50 bg-success text-white p-2" style="width: 80px;">h-50</div>
+                    <div class="h-75 bg-success text-white p-2" style="width: 80px;">h-75</div>
+                    <div class="h-100 bg-success text-white p-2" style="width: 80px;">h-100</div>
+                </div>
+
+                <h4 class="mt-4">Max Width/Height:</h4>
+                <div class="example-box">
+                    <div class="mw-100 bg-info text-white p-2 mb-2" style="width: 2000px;">
+                        mw-100 - Max width 100% (prevents overflow)
+                    </div>
+                    <div class="mh-100 bg-warning text-dark p-2" style="height: 2000px; max-height: 100px;">
+                        mh-100 - Max height 100%
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bonus: Common Patterns -->
+        <section id="patterns" class="mb-5">
+            <h2 class="section-title">10. Common Patterns</h2>
+
+            <div class="utility-card">
+                <h4>Centered Content:</h4>
+                <div class="example-box">
+                    <div class="d-flex justify-content-center align-items-center bg-secondary" style="height: 150px;">
+                        <div class="text-white">Centered with Flexbox</div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">Card Layout:</h4>
+                <div class="example-box">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card 1</h5>
+                                    <p class="card-text">Some content here</p>
+                                    <button class="btn btn-primary">Action</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card 2</h5>
+                                    <p class="card-text">Some content here</p>
+                                    <button class="btn btn-primary">Action</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card 3</h5>
+                                    <p class="card-text">Some content here</p>
+                                    <button class="btn btn-primary">Action</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">Responsive Navbar Pattern:</h4>
+                <div class="example-box">
+                    <nav class="navbar navbar-expand-md navbar-dark bg-primary rounded-1">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">Logo</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#demo">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="demo">
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="mb-5">
+            <h2 class="section-title">Quick Reference Cheat Sheet</h2>
+            <div class="utility-card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Spacing</h5>
+                        <ul class="small">
+                            <li><code>m-{0-5}</code> - margin</li>
+                            <li><code>p-{0-5}</code> - padding</li>
+                            <li><code>mt/mb/ms/me/mx/my</code> - directional</li>
+                        </ul>
+
+                        <h5 class="mt-3">Colors</h5>
+                        <ul class="small">
+                            <li><code>text-{color}</code> - text color</li>
+                            <li><code>bg-{color}</code> - background</li>
+                            <li><code>bg-opacity-{25-100}</code></li>
+                        </ul>
+
+                        <h5 class="mt-3">Typography</h5>
+                        <ul class="small">
+                            <li><code>fs-{1-6}</code> - font size</li>
+                            <li><code>fw-{bold,normal,light}</code></li>
+                            <li><code>text-{start,center,end}</code></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Flexbox</h5>
+                        <ul class="small">
+                            <li><code>d-flex</code> - flex container</li>
+                            <li><code>justify-content-{start,center,end,between,around}</code></li>
+                            <li><code>align-items-{start,center,end}</code></li>
+                            <li><code>flex-{row,column}</code></li>
+                            <li><code>gap-{0-5}</code></li>
+                        </ul>
+
+                        <h5 class="mt-3">Grid</h5>
+                        <ul class="small">
+                            <li><code>container</code> - grid container</li>
+                            <li><code>row</code> - grid row</li>
+                            <li><code>col-{1-12}</code> - columns</li>
+                            <li><code>col-{sm,md,lg,xl}-{1-12}</code></li>
+                        </ul>
+
+                        <h5 class="mt-3">Display</h5>
+                        <ul class="small">
+                            <li><code>d-{none,block,inline,flex}</code></li>
+                            <li><code>d-{sm,md,lg}-{value}</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container text-center">
+            <h5 class="fw-bold mb-3">Erle Daniel Sudario</h5>
+            <p class="text-secondary mb-2">Bootstrap Utilities Learning Guide</p>
+            <small class="text-secondary">
+                © 2026 All Rights Reserved
+            </small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
